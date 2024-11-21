@@ -1,19 +1,17 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {AddAddress, Forgot, SecondSetUp, SetUp,LogIn,SignUp, ThirdSetUp  } from '../screens/auth';
-const Stack = createNativeStackNavigator();
+import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigation from './auth';
+import AppNavigation from './app';
+const MainStack = createNativeStackNavigator();
 const Navigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown:false}}>
-    <Stack.Screen name="LogIn" component={LogIn} />
-     <Stack.Screen name="Forgot" component={Forgot} />
-    <Stack.Screen name="SignUp" component={SignUp} />
-    <Stack.Screen name="SetUp" component={SetUp} />
-    <Stack.Screen name="AddAddress" component={AddAddress} />
-     <Stack.Screen name="SecondSetUp" component={SecondSetUp} />
-     <Stack.Screen name="ThirdSetUp" component={ThirdSetUp} /> 
-
-  </Stack.Navigator>
+    <NavigationContainer>
+    <MainStack.Navigator initialRouteName='App' screenOptions={{headerShown:false}}>
+    <MainStack.Screen name='Auth' component={AuthNavigation}/>
+    <MainStack.Screen name='App' component={AppNavigation}/>
+    </MainStack.Navigator>
+    </NavigationContainer>
   )
 }
 

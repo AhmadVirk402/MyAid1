@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { PreSplash,Splash } from './src/screens/auth';
-import { NavigationContainer } from '@react-navigation/native';
+
 import Navigation from './src/navigation';
 
 const App = () => {
@@ -33,9 +33,7 @@ const App = () => {
   else
 
     return (
-      <NavigationContainer>
         <Navigation />
-      </NavigationContainer>
 
     )
 }

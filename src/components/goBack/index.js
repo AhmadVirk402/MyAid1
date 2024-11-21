@@ -36,18 +36,25 @@ const styles=StyleSheet.create({
     flexDirection:'row',
     marginTop:responsiveHeight(2.5),
     marginLeft:responsiveWidth(4),
+    width:responsiveWidth('90%'),
+    justifyContent:'center',
+    alignItems:'center'
    
   },
 
   text:{
     fontSize:FontSizes.h5,
     fontFamily:Fonts.RobotoBold,
-   marginLeft:responsiveWidth('20%'),
-    textAlign:'center'
+   //marginLeft:responsiveWidth('20%'),
+    textAlign:'center',
+    width:responsiveWidth('85%'),
+    alignContent:'center',
+    justifyContent:'center',
+    alignItems:'center',
     
   },
   line:{
-    borderWidth:responsiveWidth(.05),
+    borderWidth:0.3,
     borderBottomColor:COLORS.grey,
     marginTop:responsiveHeight(2)
   }

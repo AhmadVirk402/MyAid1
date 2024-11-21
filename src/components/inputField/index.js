@@ -9,12 +9,9 @@ import {
   } from 'react-native-responsive-hook';
 const InputField = ({ name, iconName1,iconType1, iconName2,iconType2, inputName,onPress }) => {
     return (
-        <View>
+        <View >
             <Text style={styles.inputText}>{name}</Text>
-
-
             <View style={styles.textInput}>
-
                 <Icon name={iconName1} type={iconType1} size={25} color={COLORS.dark} style={styles.icon} />
                 <TextInput placeholder={inputName} style={styles.input} />
                 <TouchableOpacity onPress={onPress}>
@@ -26,7 +23,6 @@ const InputField = ({ name, iconName1,iconType1, iconName2,iconType2, inputName,
                 }
                 </TouchableOpacity>
             </View>
-
         </View>
     )
 }
