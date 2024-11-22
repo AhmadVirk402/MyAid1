@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     },
 
     buttonView: {
-        marginTop: responsiveHeight(1)
+       // marginTop: responsiveHeight()
     }
 
 

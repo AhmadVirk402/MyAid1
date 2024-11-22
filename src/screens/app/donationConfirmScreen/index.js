@@ -100,7 +100,7 @@ const DonationConfirmScreen = () => {
                             <Image source={require('../../../assets/images/itemImg2.png')}style={styles.itemStyle}/>
                             <Image source={require('../../../assets/images/itemImg3.png')}style={styles.itemStyle}/>
                         </View>
-
+                         <View style={styles.spacer}/>
                         <View style={styles.itemImg}>
                             <Image source={require('../../../assets/images/itemImg1.png')}style={styles.itemStyle}/>
                             <Image source={require('../../../assets/images/itemImg2.png')}style={styles.itemStyle}/>
@@ -120,7 +120,7 @@ const DonationConfirmScreen = () => {
                 </View>
             </ScrollView>
             <View style={styles.buttonView} >
-                <Button name={'Confirm Donation'} onPress={() => navigation.navigate('DeliveryScreen')} />
+                <Button name={'Confirm Donation'} onPress={() => setModalVisible(true)} />
             </View>
 
             <Modal
@@ -144,7 +144,7 @@ const DonationConfirmScreen = () => {
               <Button name={'Continue'} onPress={() => {
                 setModalVisible(false)
                 setTimeout(() => {
-                  navigation.replace('App')
+                    navigation.navigate('DeliveryScreen')
                 }, 1000);
               }} />
             </View>
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
 
     },
     spacer: {
-        marginVertical: responsiveHeight(1.1)
+        marginVertical: responsiveHeight(1)
     },
     locViewIn: {
         flexDirection: 'row'
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
     },
     itemStyle:{
-        width:responsiveWidth(27),
+        width:responsiveWidth(26),
     },
 
     buttonView: {
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         alignItems: 'center',
         width: responsiveWidth('100%'),
-        height: responsiveHeight(7),
+        height: responsiveHeight(3),
         backgroundColor: COLORS.white,
         marginTop: responsiveHeight('90%'),
         justifyContent: 'center'

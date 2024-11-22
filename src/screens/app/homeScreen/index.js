@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, FlatList, Modal } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, FlatList, Modal, SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS, Fonts, FontSizes } from '../../../utilities';
 import {
@@ -98,6 +98,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   return (
+    
     <View>
       <ScrollView >
         {/* Header */}
@@ -234,6 +235,7 @@ const HomeScreen = () => {
         </View>
       </Modal>
     </View>
+    
   );
 };
 

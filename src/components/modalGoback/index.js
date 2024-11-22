@@ -34,9 +34,9 @@ const styles=StyleSheet.create({
  header:{
    flexDirection:'row',
    marginVertical:responsiveHeight(4),
-   width:responsiveWidth('74%'),
-   alignItems:'center',
-   alignContent:'center'
+   paddingHorizontal: responsiveWidth(10),
+   width:responsiveWidth('100%'),
+  
   
  },
 

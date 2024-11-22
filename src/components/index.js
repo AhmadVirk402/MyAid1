@@ -13,6 +13,8 @@ import ModalItem from "./modalItems"
 import ItemBox from "./itemBox"
 import MainItemBox from "./mainItemBox"
 import Radiobutton from "./ratioButton"
+import CustomRadioImg from "./customRadioImg"
+import MiniRadioButton from "./miniRadioButton"
 export {
    InputField,
    Button,
@@ -28,5 +30,7 @@ export {
    ModalItem,
    ItemBox,
    MainItemBox,
-   Radiobutton
+   Radiobutton,
+   CustomRadioImg,
+   MiniRadioButton
 }
