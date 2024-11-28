@@ -4,7 +4,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import { HomeScreen,NeedAndWantsScreen,TrackDonationsScreen,AccountScreen,MyDonationsScreen,AddDonationScreen,LocationScreen,DropOffLocationScreen,DonationConfirmScreen,DeliveryScreen } from '../../screens/app';
+import { 
+  HomeScreen,NeedAndWantsScreen,
+  TrackDonationsScreen,AccountScreen,
+  MyDonationsScreen,AddDonationScreen,
+  LocationScreen,DropOffLocationScreen,
+  DonationConfirmScreen,DeliveryScreen,
+  SecondDeliveryScreen,ViewDetailsScreen,
+  ClothesDonationScreen,SecondClothesDonationScreen,
+  CustomDonationScreen,SecondCustomDonationScreen
+} from '../../screens/app';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { COLORS, FontSizes } from '../../utilities';
 import { CustomTabBar } from '../../components';
@@ -36,6 +45,7 @@ const BottomNavigation = () => {
 
 const AppNavigation = () => {
     return (
+      
       <Stack.Navigator screenOptions={{headerShown:false}}>
       <Stack.Screen name="BottomTab" component={BottomNavigation} />
       <Stack.Screen name="MyDonationScreen" component={MyDonationsScreen} />
@@ -44,6 +54,12 @@ const AppNavigation = () => {
       <Stack.Screen name="DropOffLocationScreen" component={DropOffLocationScreen} />
       <Stack.Screen name="DonationConfirmScreen" component={DonationConfirmScreen} />
       <Stack.Screen name="DeliveryScreen" component={DeliveryScreen} />
+      <Stack.Screen name="SecondDeliveryScreen" component={SecondDeliveryScreen} />
+      <Stack.Screen name="ViewDetailsScreen" component={ViewDetailsScreen} />
+      <Stack.Screen name="ClothesDonationScreen" component={ClothesDonationScreen} />
+      <Stack.Screen name="SecondClothesDonationScreen" component={SecondClothesDonationScreen} />
+      <Stack.Screen name="CustomDonationScreen" component={CustomDonationScreen} />
+      <Stack.Screen name="SecondCustomDonationScreen" component={SecondCustomDonationScreen} />
     </Stack.Navigator>
     )
   }

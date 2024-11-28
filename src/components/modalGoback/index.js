@@ -43,9 +43,10 @@ const styles=StyleSheet.create({
  text:{
    fontSize:FontSizes.h5,
    fontFamily:Fonts.RobotoBold,
-  marginLeft:responsiveWidth('15%'),
-   textAlign:'center'
-   
+  // marginLeft:responsiveWidth('15%'),
+  width:responsiveWidth('70%'),
+  textAlign:'center',
+  
  },
  
 })

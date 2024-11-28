@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { PreSplash,Splash } from './src/screens/auth';
 
 import Navigation from './src/navigation';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
   const [ispreSplashVisible, setPreSplashVisible] = useState(true)
@@ -33,7 +34,9 @@ const App = () => {
   else
 
     return (
+      <GestureHandlerRootView>
         <Navigation />
+        </GestureHandlerRootView>
 
     )
 }

@@ -7,7 +7,7 @@ import {
   heightPercentageToDP as responsiveHeight,
   responsiveFont,
 } from 'react-native-responsive-hook';
-const MainHeader = () => {
+const MainHeader= () => {
   return (
     <View style={styles.header}>
         <View style={styles.logoStyle}>

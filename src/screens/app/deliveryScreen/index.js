@@ -8,14 +8,19 @@ import {
 
 } from 'react-native-responsive-hook';
 import { Icon } from '@rneui/themed';
-import { Button, GoBack, MiniRadioButton, CustomRadioImg, InputField } from '../../../components';
+import { Button, GoBack, MiniRadioButton, CustomRadioImg, InputField, MiniButtons,ModalGoBack, MiniInputField } from '../../../components';
 import { useNavigation } from '@react-navigation/native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
-
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
 
 const DeliveryScreen = () => {
   const navigation = useNavigation();
+  const [selected, setSelected] = useState('');
+  const [secondModalVisible, setSecondModalVisible] = useState(false);
+
+  
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.container}>
       <GoBack name={'Delivery'} />
@@ -70,12 +75,134 @@ const DeliveryScreen = () => {
             />
           </View>
         </View>
+        
+      <MiniButtons 
+      name1={'Schedule Delivery'}
+      name2={'Find Rider'}
+      onPress2={()=>navigation.navigate('SecondDeliveryScreen')}
+      onPress1={ () => setModalVisible(true)}
+      />
 
 
 
 
 
       </View>
+
+
+
+      
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+          <ModalGoBack name={'Schedule Booking'} onPress={() => setModalVisible(false)} />
+             
+            
+          <Calendar
+            style={{
+              marginHorizontal: responsiveWidth(5),
+              height: responsiveHeight(40),
+              width:responsiveWidth(86),
+              borderWidth: 1,
+              borderRadius: responsiveWidth(5),
+              borderColor:COLORS.grey,
+            }}
+            onDayPress={day => {
+              setSelected(day.dateString);
+            }}
+            markedDates={{
+              [selected]: {
+                selected: true,
+              },
+            }}
+            // Customizing text size and making it bold
+            theme={{
+              textDayFontSize: 16,
+              textMonthFontSize: 16,
+              textDayHeaderFontSize: 16,
+              textDayFontWeight: 'bold',
+              textMonthFontWeight: 'bold',
+              textDayHeaderFontWeight: 'bold',
+              selectedDayBackgroundColor:COLORS.primary,
+              selectedDayTextColor: '#ffffff',
+              dayTextColor: '#4A5660',
+              todayTextColor: '#4A5660',
+              arrowColor: COLORS.grey, // Set color for arrow icons
+            }}
+            // Customizing arrow icons
+            renderArrow={direction => (
+              <Icon
+                name={
+                  direction === 'left' ? 'arrow-back-ios' : 'arrow-forward-ios'
+                }
+                size={18} // Set the size of the icon
+                color={COLORS.grey} // Set the color of the icon
+              />
+            )}
+          />
+           
+
+
+          <Text style={styles.modalRegularText}>Add Delivery Time Slots</Text>
+          <View style={styles.MiniInputs}>
+          <MiniInputField name={'From'} inputName={'09:00Am'}/>
+          <MiniInputField name={'Till'} inputName={'11:00Am'}/>
+          </View>
+
+            <View style={styles.modalbutton}>
+            <Button
+                name={'Verify'}
+                onPress={() => {
+                  setModalVisible(false)
+                  setTimeout(() => {
+                    setSecondModalVisible(true)
+                  }, 1000);
+                }}
+              />
+            </View>
+
+          </View>
+        </View>
+      </Modal>
+
+   
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={secondModalVisible}
+        onRequestClose={() => setSecondModalVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.mainText}>Success</Text>
+
+            <View style={styles.imgView}>
+
+              <Image source={require('../../../assets/images/img5.png')} />
+            </View>
+            <Text style={styles.modalRegularText2}>Your delivery is scheduled successfully</Text>
+
+            <View style={styles.modalbutton}>
+              <Button name={'Continue'} onPress={() => {
+                setSecondModalVisible(false)
+                setTimeout(() => {
+                  navigation.navigate('DeliveryScreen')
+                }, 1000);
+              }} />
+            </View>
+
+          </View>
+        </View>
+      </Modal>
+
+
+
+      
     </View>
   )
 }
@@ -135,7 +262,54 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom:responsiveHeight(1.5)
   },
+
+
+
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+  modalContainer: {
+    width: responsiveWidth('100%'),
+    backgroundColor: COLORS.white,
+    borderTopRightRadius: responsiveWidth(7),
+    borderTopLeftRadius: responsiveWidth(7),
+    padding: responsiveHeight(1),
+    alignItems: 'center',
+  },
+  modalRegularText: {
+    fontSize: FontSizes.large,
+    width: responsiveWidth(90),
+    marginTop: responsiveHeight(3),
+    textAlign: 'center',
+    fontFamily:Fonts.RobotoMedium
+  },
+  modalRegularText2: {
+    fontSize: FontSizes.regular,
+    width: responsiveWidth(90),
+    marginTop: responsiveHeight(3),
+    textAlign: 'center',
+    fontFamily:Fonts.RobotoMedium
+  },
+  mainText: {
+    fontSize: FontSizes.h4,
+    fontFamily: Fonts.RobotoBold,
+    marginBottom:responsiveHeight(3)
+  },
+  MiniInputs:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    width:responsiveWidth(90)
+  },
+  modalbutton: {
+    marginBottom: responsiveHeight(4)
+  },
+
+ 
 
 
 

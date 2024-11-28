@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState}from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS, Fonts, FontSizes } from '../../utilities';
@@ -8,11 +8,21 @@ import {
   responsiveFont,
 } from 'react-native-responsive-hook';
 
-const ItemComponent = ({name,img,onPress}) => {
+const ItemComponent = ({name,img,onPress,isPressed}) => {
+  // const [isPressed, setIsPressed] = useState(false);
   return (
-    <TouchableOpacity onPress={onPress} style={styles.category}>
-    <View style={styles.categoryimg}>
-    <Image source={img}/>
+    <TouchableOpacity
+    
+    onPress={() => {
+      // setIsPressed(!isPressed)
+      onPress&&onPress()
+    }} style={styles.category}>
+    <View style={[styles.categoryimg,
+      isPressed && styles.categoryimg2,
+    ]}>
+    <Image source={img}
+    style={isPressed && styles.img2}
+    />
     </View>
     <Text style={styles.itemText}>{name}</Text>
   </TouchableOpacity>
@@ -38,6 +48,19 @@ const styles=StyleSheet.create({
           borderColor:COLORS.primary,
           borderWidth:2
           },
+          categoryimg2: { 
+            alignItems: 'center',
+            justifyContent:'center',
+            backgroundColor: COLORS.primary,
+            width:responsiveWidth(20),
+            height:responsiveHeight(10),
+            borderRadius:responsiveHeight(5),
+            borderColor:COLORS.primary,
+            borderWidth:2
+            },
+            img2:{
+              tintColor:COLORS.white
+            },
           itemText:{
             fontSize:FontSizes.regular,
             fontFamily:Fonts.RobotoMedium
