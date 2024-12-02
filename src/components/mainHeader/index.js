@@ -7,7 +7,9 @@ import {
   heightPercentageToDP as responsiveHeight,
   responsiveFont,
 } from 'react-native-responsive-hook';
+import { useNavigation } from '@react-navigation/native';
 const MainHeader= () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.header}>
         <View style={styles.logoStyle}>
@@ -16,7 +18,7 @@ const MainHeader= () => {
         </View>
         <View style={styles.logoStyle}>
 
-         <TouchableOpacity>
+         <TouchableOpacity onPress={()=>navigation.navigate('NotificationScreen')}>
         <View style={styles.headerIcon}>
         <Ionicons name="notifications" size={15} color={COLORS.dark} />
         </View>

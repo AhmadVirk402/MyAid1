@@ -12,7 +12,9 @@ import {
   DonationConfirmScreen,DeliveryScreen,
   SecondDeliveryScreen,ViewDetailsScreen,
   ClothesDonationScreen,SecondClothesDonationScreen,
-  CustomDonationScreen,SecondCustomDonationScreen
+  CustomDonationScreen,SecondCustomDonationScreen,
+  ActiveDeliveryScreen,DeliveredScreen,
+  CancelledScreen,NotificationScreen
 } from '../../screens/app';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { COLORS, FontSizes } from '../../utilities';
@@ -59,7 +61,10 @@ const AppNavigation = () => {
       <Stack.Screen name="ClothesDonationScreen" component={ClothesDonationScreen} />
       <Stack.Screen name="SecondClothesDonationScreen" component={SecondClothesDonationScreen} />
       <Stack.Screen name="CustomDonationScreen" component={CustomDonationScreen} />
-      <Stack.Screen name="SecondCustomDonationScreen" component={SecondCustomDonationScreen} />
+      <Stack.Screen name="ActiveDeliveryScreen" component={ActiveDeliveryScreen} />
+      <Stack.Screen name="DeliveredScreen" component={DeliveredScreen} />
+      <Stack.Screen name="CancelledScreen" component={CancelledScreen} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
     </Stack.Navigator>
     )
   }

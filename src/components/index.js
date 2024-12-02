@@ -18,6 +18,7 @@ import MiniRadioButton from "./miniRadioButton"
 import MiniButtons from "./miniButtons"
 import SecondDonationCard from "./secondDonationCard"
 import BottomSheets from "./bottomSheet"
+import TrackDonationComponent from "./trackDonationComponent"
 export {
    InputField,
    Button,
@@ -38,5 +39,6 @@ export {
    MiniRadioButton,
    MiniButtons,
    SecondDonationCard,
-   BottomSheets
+   BottomSheets,
+   TrackDonationComponent
 }
