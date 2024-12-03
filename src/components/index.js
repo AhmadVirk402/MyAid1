@@ -19,6 +19,10 @@ import MiniButtons from "./miniButtons"
 import SecondDonationCard from "./secondDonationCard"
 import BottomSheets from "./bottomSheet"
 import TrackDonationComponent from "./trackDonationComponent"
+import NotificationComponent from "./notificationComponent"
+import AmountComponent from "./amountComponent"
+import OrganizationCard from "./organizationCard"
+import PersonCard from "./personCard"
 export {
    InputField,
    Button,
@@ -40,5 +44,9 @@ export {
    MiniButtons,
    SecondDonationCard,
    BottomSheets,
-   TrackDonationComponent
+   TrackDonationComponent,
+   NotificationComponent,
+   AmountComponent,
+   OrganizationCard,
+   PersonCard
 }

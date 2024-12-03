@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet,FlatList } from 'react-native'
 import { COLORS,FontSizes,Fonts } from '../../../utilities'
 import React from 'react'
 import {
@@ -6,34 +6,89 @@ import {
   heightPercentageToDP as responsiveHeight,
   responsiveFont,
 } from 'react-native-responsive-hook';
-import { GoBack } from '../../../components'
+import { GoBack, NotificationComponent } from '../../../components'
 import { Image } from 'react-native-animatable';
 import { Icon } from '@rneui/base';
+import { ScrollView } from 'react-native-gesture-handler';
+
+
+const NotificationData = [
+  {
+    id: 1,
+    borderTopLeftRadius:responsiveHeight(2),
+    borderTopRightRadius:responsiveHeight(2),
+    borderBottomWidth:1,
+  },
+  {
+    id: 2,
+    borderBottomWidth:1,
+ 
+  },
+  {
+    id: 3,
+    borderBottomWidth:1,
+  
+
+  },
+  {
+    id: 4,
+    borderBottomRightRadius:responsiveHeight(2),
+    borderBottomLeftRadius:responsiveHeight(2),
+  },
+]
 
 const NotificationScreen = () => {
   return (
     <View style={styles.container}>
+      <ScrollView>
       <GoBack name={'Notifications'}/>
       <View style={styles.mainContainer}>
+
       <Text style={styles.mainText}>Today</Text>
+  
+      <FlatList
+            data={NotificationData}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <NotificationComponent
+              borderTopLeftRadius={item.borderTopLeftRadius}
+              borderTopRightRadius={item.borderTopRightRadius}
+              borderBottomLeftRadius={item.borderBottomLeftRadius}
+              borderBottomRightRadius={item.borderBottomRightRadius}
+              borderBottomWidth={item.borderBottomWidth}
+             
+              />
+            )}
+            showsVerticalScrollIndicator={false}
+          />
 
-      <View  style={styles.notificationView}>
-        <View>
-          <Image source={require('../../../assets/images/img6.png')}/>
-        </View>
-        <View>
-          <Text style={styles.nText1}>Lorem ipsum dolor sit ame...</Text>
-          <Text style={styles.nText2}>Ut sodales, ex sit amet consectetur accumsan, nibh ex sollicitudin metus, volutpat lacinia arcu nibh... </Text>
-          <Text style={styles.nText2}>9:34am</Text>
-        </View>
-        <View style={{justifyContent:'center'}}>
-          <Icon name='keyboard-arrow-right' type='material'/>
-        </View>
+
+<Text style={styles.mainText}>Yesterday</Text>
+  
+  <FlatList
+        data={NotificationData}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <NotificationComponent
+          borderTopLeftRadius={item.borderTopLeftRadius}
+          borderTopRightRadius={item.borderTopRightRadius}
+          borderBottomLeftRadius={item.borderBottomLeftRadius}
+          borderBottomRightRadius={item.borderBottomRightRadius}
+          borderBottomWidth={item.borderBottomWidth}
+         
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+      />
+
+
+      
+
+
+
+
       </View>
-
-
-
-      </View>
+      </ScrollView>
     </View>
   )
 }
@@ -54,8 +109,21 @@ mainText:{
 },
 notificationView:{
   flexDirection:'row',
-  width:responsiveWidth('80%'),
-  justifyContent:'space-between'
+  width:responsiveWidth('93%'),
+  justifyContent:'space-between',
+  backgroundColor:COLORS.white,
+  padding:responsiveWidth(2),
+  //borderRadius:responsiveHeight(2),
+  borderTopLeftRadius:responsiveHeight(2),
+  borderTopRightRadius:responsiveHeight(2)
+},
+notificationView2:{
+  flexDirection:'row',
+  width:responsiveWidth('93%'),
+  justifyContent:'space-between',
+  backgroundColor:COLORS.white,
+  padding:responsiveWidth(2),
+  //borderRadius:responsiveHeight(2),
 },
 nText1:{
   fontSize:FontSizes.large,
@@ -65,4 +133,5 @@ nText2:{
   fontSize:FontSizes.small,
   fontFamily:Fonts.RobotoLight
 },
+
 })

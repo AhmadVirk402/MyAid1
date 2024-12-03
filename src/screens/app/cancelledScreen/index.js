@@ -34,7 +34,7 @@ const CancelledScreen = () => {
             </View>
 
             <View style={styles.riderIViews}>
-              <TouchableOpacity style={styles.iconView}>
+              <TouchableOpacity style={styles.iconView} onPress={()=>navigation.navigate('ChatScreen')}>
                 <Icon name='mail-outline' type='material' color={COLORS.white} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.imgView2}>

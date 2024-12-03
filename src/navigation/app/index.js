@@ -14,7 +14,8 @@ import {
   ClothesDonationScreen,SecondClothesDonationScreen,
   CustomDonationScreen,SecondCustomDonationScreen,
   ActiveDeliveryScreen,DeliveredScreen,
-  CancelledScreen,NotificationScreen
+  CancelledScreen,NotificationScreen,
+  ChatScreen
 } from '../../screens/app';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { COLORS, FontSizes } from '../../utilities';
@@ -65,6 +66,7 @@ const AppNavigation = () => {
       <Stack.Screen name="DeliveredScreen" component={DeliveredScreen} />
       <Stack.Screen name="CancelledScreen" component={CancelledScreen} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} />
     </Stack.Navigator>
     )
   }

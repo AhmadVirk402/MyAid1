@@ -18,6 +18,7 @@ import ActiveDeliveryScreen from "./activeDeliveryScreen"
 import DeliveredScreen from "./deliveredScreen"
 import CancelledScreen from "./cancelledScreen"
 import NotificationScreen from "./notificationScreen"
+import ChatScreen from "./chatScreen"
 export {
    HomeScreen,
    NeedAndWantsScreen,
@@ -38,5 +39,6 @@ export {
    ActiveDeliveryScreen,
    DeliveredScreen,
    CancelledScreen,
-   NotificationScreen
+   NotificationScreen,
+   ChatScreen,
 }
