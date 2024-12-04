@@ -54,7 +54,7 @@ const styles=StyleSheet.create({
     
   },
   line:{
-    borderWidth:0.3,
+    borderBottomWidth:0.3,
     borderBottomColor:COLORS.grey,
     marginTop:responsiveHeight(2)
   }

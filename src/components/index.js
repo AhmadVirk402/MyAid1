@@ -23,6 +23,7 @@ import NotificationComponent from "./notificationComponent"
 import AmountComponent from "./amountComponent"
 import OrganizationCard from "./organizationCard"
 import PersonCard from "./personCard"
+import ProfileItemComponent from "./profileItemComponent"
 export {
    InputField,
    Button,
@@ -48,5 +49,6 @@ export {
    NotificationComponent,
    AmountComponent,
    OrganizationCard,
-   PersonCard
+   PersonCard,
+   ProfileItemComponent
 }

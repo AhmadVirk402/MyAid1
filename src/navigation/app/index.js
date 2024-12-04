@@ -15,7 +15,10 @@ import {
   CustomDonationScreen,SecondCustomDonationScreen,
   ActiveDeliveryScreen,DeliveredScreen,
   CancelledScreen,NotificationScreen,
-  ChatScreen
+  ChatScreen,MoneyDonationDetails,
+  ProfileScreen,EditProfile,
+  ManageAddress,AddNewAddress,
+  ChangePasswordScreen,PaymentMethod
 } from '../../screens/app';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { COLORS, FontSizes } from '../../utilities';
@@ -67,6 +70,13 @@ const AppNavigation = () => {
       <Stack.Screen name="CancelledScreen" component={CancelledScreen} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen name="MoneyDonationDetails" component={MoneyDonationDetails} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen name="ManageAddress" component={ManageAddress} />
+      <Stack.Screen name="AddNewAddress" component={AddNewAddress} />
+      <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+      <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
     </Stack.Navigator>
     )
   }

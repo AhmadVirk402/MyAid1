@@ -7,14 +7,16 @@ import {
   responsiveFont,
 } from 'react-native-responsive-hook';
 import { Icon } from '@rneui/base';
+import { useNavigation } from '@react-navigation/native';
 
 const AmountComponent = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.mainView}>
     <Text style={styles.mainText}>Bill Top up</Text>
     <View style={styles.innerView}>
       <Text style={styles.amount}>$56,763.20</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('MoneyDonationDetails')}>
         <Text style={styles.buttonText}>Send Money</Text>
         <Icon name='arrow-forward'type='Ionicons' size={15}color={COLORS.white}/>
       </TouchableOpacity>

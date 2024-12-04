@@ -24,7 +24,7 @@ const MainHeader= () => {
         </View>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('ProfileScreen')}>
         <View style={styles.imgBorder}>
           <Image source={require('../../assets/images/img6.png')}/>
         </View>

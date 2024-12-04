@@ -11,7 +11,13 @@ const COLORS = {
     bgColor2: '#26CC2333',
     bdColor3:'#FFD33C1C',
     borderColor:'#FFD33C',
-
+    bg1:' #DA88011A',
+    bg2:'#0094FF1A',
+    bg3:'#4BEA751A',
+    bg4:'#F9F5171A',
+    bg5:'#03DAC51A',
+    bg6:'#9747FF1A',
+    bg7:' #FF00001A',
 
   };
   

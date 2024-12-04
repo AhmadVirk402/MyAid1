@@ -19,6 +19,13 @@ import DeliveredScreen from "./deliveredScreen"
 import CancelledScreen from "./cancelledScreen"
 import NotificationScreen from "./notificationScreen"
 import ChatScreen from "./chatScreen"
+import MoneyDonationDetails from "./moneyDonationDetails"
+import ProfileScreen from "./profileScreen"
+import EditProfile from "./editProfile"
+import ManageAddress from "./manageAddress"
+import AddNewAddress from "./addNewAddress"
+import ChangePasswordScreen from "./changePasswordScreen"
+import PaymentMethod from "./paymentMethod"
 export {
    HomeScreen,
    NeedAndWantsScreen,
@@ -41,4 +48,11 @@ export {
    CancelledScreen,
    NotificationScreen,
    ChatScreen,
+   MoneyDonationDetails,
+   ProfileScreen,
+   EditProfile,
+   ManageAddress,
+   AddNewAddress,
+   ChangePasswordScreen,
+   PaymentMethod
 }
